@@ -1,7 +1,7 @@
 <?php
 
 
-class Clearapp_Data_Layer_Model {
+class Wordpress_Data_Layer_Model {
 
     public function __construct() {
         add_action( 'wp_head', array($this, 'add_data_layer'));
