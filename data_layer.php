@@ -3,10 +3,6 @@
 
 class Wordpress_Data_Layer_Model {
 
-    public function __construct() {
-        add_action( 'wp_head', array($this, 'add_data_layer'));
-    }
-
     /**
      * Get the data layer and return it in json.
      *
