@@ -7,15 +7,6 @@ class Clearapp_Data_Layer_Model {
         add_action( 'wp_head', array($this, 'add_data_layer'));
     }
 
-    public function add_data_layer() { ?>
-    
-        <!-- Wordpress Data Layer -->
-        <script type="text/javascript">
-            window.WpDataLayer = <?php echo $this->get(); ?>
-        </script>
-
-    <? }
-
     /**
      * Get the data layer and return it in json.
      *
