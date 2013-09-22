@@ -94,8 +94,24 @@ class Wordpress_Data_Layer_Model {
         } else {
             $user->logged_in = false;
         }
+        $user->ip = $this->get_user_ip();
        
         return $user;
+    }
+
+    /**
+     * Get the IP of a user
+     *
+     */
+    public function get_user_ip() {
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        } else {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        return $ip;
     }
 
     /**
